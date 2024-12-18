@@ -1,0 +1,36 @@
+[project]
+name = "dagster-and-dbt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+"dagster==1.9.*",
+        "dagster-cloud",
+        "dagster-duckdb",
+        "dagster-dbt",
+        "dbt-duckdb",
+        "geopandas",
+        "kaleido==0.2.0",
+        "pandas[parquet]",
+        "plotly",
+        "shapely",
+        "smart_open[s3]",
+        "s3fs",
+        "smart_open",
+        "boto3",
+        "pyarrow"
+        ]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.dagster]
+module_name = "dagster_university"
+
+[dependency-groups]
+dev = [
+    "dagster-webserver>=1.9.5",
+    "pytest>=8.3.4",
+]
